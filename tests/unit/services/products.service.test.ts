@@ -16,4 +16,15 @@ describe('ProductsService', function () {
 
     expect(serviceResponse).to.deep.eq(productMock.validProductFromDB);
   });
+
+  it('deve ser possível listar todos os produtos com sucesso', async function () {
+    const mockFindAllReturn = [ProductModel.build(productMock.listOfProductsFromDB[0])];
+    sinon.stub(ProductModel, 'findAll')
+      .resolves(mockFindAllReturn);
+
+    const serviceResponse = await productService.getAll();
+
+    expect(serviceResponse).to.deep.eq([productMock.listOfProductsFromDB[0]]);
+  }
+  );
 });
