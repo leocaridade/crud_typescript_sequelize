@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import sinon from 'sinon';
 import ProductModel from '../../../src/database/models/product.model';
-import productService from '../../../src/services/product.service'
+import productService from '../../../src/services/product.service';
 import productMock from '../../mocks/product.mock';
 
 describe('ProductsService', function () {
